@@ -3,9 +3,11 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Cart from './pages/cart/Cart';
 import Shop from './pages/shop/shop';
+import { ShopContextProvider } from './context/shopcontext';
 
 function App() {
   return (
+    <ShopContextProvider>
     <Router>
       <Navigation />
       <Routes>
@@ -14,6 +16,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
       </Routes>
     </Router>
+    </ShopContextProvider>
   );
 }
 
