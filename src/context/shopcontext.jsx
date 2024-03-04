@@ -32,8 +32,8 @@ export const ShopContextProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0){
                 let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-                totalCost += cartItems[item] * itemInfo.cost; // Assuming there's a `cost` property
-                totalLemonsUsed += cartItems[item] * itemInfo.lemonsUsed; // Assuming there's a `lemonsUsed` property
+                totalCost += cartItems[item] * itemInfo.cost; 
+                totalLemonsUsed += cartItems[item] * itemInfo.lemonsUsed; 
             }
         }
         const totalSales = getTotalCartAmount(); // This is your total revenue from sales
