@@ -24,9 +24,9 @@ export const Cart = () => {
     <div className='bg-white shadow rounded-lg p-6'>
       <div className="flex justify-between items-center mb-6">
         <p className="text-lg font-medium text-gray-900">Subtotal: Kr{totalAmount.toFixed(2)}</p>
-        <button onClick={() => navigate("/shop")} className="bg-yellow-400 hover:bg-yellow-500 text-white fo  nt-semibold py-2 px-4 rounded-lg shadow">Continue Shopping</button>
+        <button onClick={() => navigate("/shop")} className="bg-yellow-400 hover:bg-yellow-500 text-white fo  nt-semibold py-2 px-4 rounded-full shadow">Continue Shopping</button>
       </div>
-      <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow">Checkout</button>
+      <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded-full shadow">Checkout</button>
     </div>
   </div>
 </div>;
