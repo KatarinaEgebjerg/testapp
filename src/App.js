@@ -4,6 +4,8 @@ import Home from './components/Home';
 import Cart from './pages/cart/Cart';
 import Shop from './pages/shop/shop';
 import { ShopContextProvider } from './context/shopcontext';
+import ProfitAndLemonsPage from './pages/ProfitAndLemonsPage'; // Import your new component
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/profit-and-lemons" element={<ProfitAndLemonsPage/>} />
       </Routes>
     </Router>
     </ShopContextProvider>

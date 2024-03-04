@@ -15,6 +15,9 @@ const Navigation = () => {
         <li>
           <Link to="/Cart">Cart</Link>
         </li>
+        <li>
+          <Link to="/profit-and-lemons">Profit and Lemons Used</Link>
+        </li>
       </ul>
     </nav>
   );

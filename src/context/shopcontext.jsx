@@ -26,6 +26,22 @@ export const ShopContextProvider = (props) => {
         return totalAmount;
     };
 
+    const getProfitAndLemonsUsed = () => {
+        let totalCost = 0;
+        let totalLemonsUsed = 0;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0){
+                let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
+                totalCost += cartItems[item] * itemInfo.cost; // Assuming there's a `cost` property
+                totalLemonsUsed += cartItems[item] * itemInfo.lemonsUsed; // Assuming there's a `lemonsUsed` property
+            }
+        }
+        const totalSales = getTotalCartAmount(); // This is your total revenue from sales
+        const profit = totalSales - totalCost; // Profit calculation
+        return { profit, totalLemonsUsed };
+    };
+    
+
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}));
     };
@@ -38,7 +54,7 @@ export const ShopContextProvider = (props) => {
         setCartItems((prev) => ({...prev, [itemId]: newAmount}));
     };
 
-    const contexValue = {cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount,};
+    const contexValue = {cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, getProfitAndLemonsUsed,};
 
     console.log(cartItems);
 
